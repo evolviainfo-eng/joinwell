@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://joinwelljoinery.co.uk/sitemap.xml

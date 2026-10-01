@@ -1,0 +1,10 @@
+# local tooling and gate output
+.claude/
+_gate/
+_qa/
+.DS_Store
+node_modules/
+# scraped sources, SR masters and internal brief stay local
+assets/
+brief.json
+gaps.md

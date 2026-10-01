@@ -1,0 +1,88 @@
+/* Joinwell Joinery tokens. Ground and ink from the logo (near-black #151515 and its champagne),
+   display face continues the tall condensed capitals of the wordmark. */
+:root {
+  --c-bg: #F2F0EA;                 /* warm stone, 3 percent of the logo's champagne */
+  --c-bg-2: #E7E3D9;               /* sand, second ground */
+  --c-bg-3: #151515;               /* the logo's black */
+  --c-ink: #171716;
+  --c-ink-2: rgb(23 23 22 / .76);
+  --c-ink-3: rgb(23 23 22 / .64);
+  --c-line: rgb(23 23 22 / .15);
+  --c-paper: #FAF9F5;
+  --c-accent: #C9BF9F;             /* champagne sampled from the mark; fills and dark grounds only */
+  --c-accent-ink: #151515;
+  --c-gold-deep: #6E6142;          /* the same hue darkened for small text on stone, 5.3:1 */
+  --c-on-dark: #F2F0EA;
+  --c-on-dark-2: rgb(242 240 234 / .74);
+  --c-line-dark: rgb(242 240 234 / .16);
+
+  --f-display: "Sofia Sans Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
+  --f-text: "Sofia Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-mono: ui-monospace, Menlo, monospace;
+
+  --t-display: clamp(2.625rem, 1.5rem + 3.6vw, 4.5rem);    /* 42 → 72 */
+  --t-display-xl: clamp(3rem, 1.4rem + 5.4vw, 6rem);
+  --t-statement: clamp(2rem, 1.2rem + 2.6vw, 3.5rem);     /* 32 → 56 */
+  --t-h2: clamp(2rem, 1.3rem + 2.2vw, 3.25rem);           /* 32 → 52 */
+  --t-row: clamp(1.75rem, 1.05rem + 2.3vw, 3.25rem);      /* index rows 28 → 52 */
+  --t-h3: clamp(1.375rem, 1.15rem + .6vw, 1.625rem);      /* 22 → 26 */
+  --t-lead: clamp(1.125rem, 1.04rem + .32vw, 1.25rem);    /* 18 → 20 */
+  --t-body: 1.0625rem;
+  --t-small: .9375rem;
+  --t-label: .875rem;                                     /* 14: functional caps never below 14 */
+  --lh-display: .98;
+  --lh-h2: 1.04;
+  --lh-body: 1.6;
+  --track-display: -.012em;
+  --track-h2: -.008em;
+  --track-label: .11em;
+  --w-display: 300;
+  --w-h2: 300;
+  --w-body: 400;
+  --measure: 60ch;
+
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px;
+  --s-7: 48px; --s-8: 64px; --s-9: 96px; --s-10: 128px; --s-11: 160px; --s-12: 200px;
+  --sec: clamp(80px, 6vw + 40px, 160px);
+  --sec-tight: clamp(44px, 3.5vw + 24px, 88px);
+  --sec-top: var(--sec);
+  --sec-bottom: var(--sec);
+
+  --wrap: 1480px;
+  --gutter: clamp(20px, 4.4vw, 64px);
+  --col-gap: clamp(16px, 2vw, 32px);
+  --plate-gap: clamp(10px, 1.2vw, 18px);
+  --nav-h: 84px;
+
+  --ease: cubic-bezier(.33, 1, .68, 1);
+  --ease-io: cubic-bezier(.65, 0, .35, 1);
+  --d-fb: 160ms;
+  --d-ui: 320ms;
+  --d-media: 700ms;
+  --d-reveal: 1000ms;
+  --rise: 14px;
+  --zoom: 1.04;
+  --lift: -3px;
+  --stagger: 90ms;
+
+  --r: 0px;
+  --r-ctl: 0px;
+  --hair: 1px solid var(--c-line);
+
+  color-scheme: light;
+}
+@media (max-width: 1099px) { :root { --nav-h: 68px; } }
+
+.on-dark {
+  --c-bg: var(--c-bg-3);
+  --c-bg-2: #1F1F1E;
+  --c-ink: var(--c-on-dark);
+  --c-ink-2: var(--c-on-dark-2);
+  --c-ink-3: rgb(242 240 234 / .62);
+  --c-line: var(--c-line-dark);
+  --c-paper: #232322;
+  --hair: 1px solid var(--c-line);
+  color-scheme: dark;
+  background: var(--c-bg);
+  color: var(--c-ink);
+}
