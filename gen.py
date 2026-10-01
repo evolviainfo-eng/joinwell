@@ -142,7 +142,7 @@ REVIEWS = {
 }
 
 S = [
- dict(slug='kitchens', nav='Kitchens', title='Bespoke kitchens in the North West',
+ dict(slug='kitchens', c=('p39-3', 'nookwood'), nav='Kitchens', title='Bespoke kitchens in the North West',
       h1='Bespoke kitchens, designed, made and fitted in the North West',
       desc='Bespoke kitchens designed, manufactured in our workshop and fitted by Joinwell Joinery across Lancashire, Manchester and Cheshire. Free home consultation.',
       lead='Bespoke kitchens designed around your lifestyle, combining craftsmanship, smart storage, premium materials, and timeless style.',
@@ -158,7 +158,7 @@ S = [
       extra=[('p11-1', 'Handleless kitchen · Lytham'), ('p10-2', 'Kitchen with lit plinths and ceiling lines'), ('p12-1', 'Kitchen with island and seating'),
              ('p10-4', 'Kitchen with lit plinths and ceiling lines'), ('p04-1', 'Shaker kitchen with pendants'), ('p14-1', 'Grey textile utility room')],
       reviews=[]),
- dict(slug='wardrobes', nav='Wardrobes', title='Fitted wardrobes and bedrooms in the North West',
+ dict(slug='wardrobes', c=('p34-1', 'walk-in-wardrobe'), nav='Wardrobes', title='Fitted wardrobes and bedrooms in the North West',
       h1='Fitted wardrobes and bedrooms, made to measure in the North West',
       desc='Bespoke fitted wardrobes, walk-in wardrobes and bedroom furniture, designed and manufactured by Joinwell Joinery to make the most of every inch.',
       lead='Bespoke fitted wardrobes, designed and manufactured to make the most of every inch.',
@@ -174,7 +174,7 @@ S = [
       extra=[('p36-1', 'Shaker wardrobes'), ('p36-3', 'Shaker wardrobes'), ('p46-3', 'Walk-in wardrobe · Poolside'), ('p46-6', 'Matt black knobs · Poolside'),
              ('p32-5', 'Bedroom with hidden doors'), ('p34-4', 'Drawers for heels')],
       reviews=['carol', 'darren']),
- dict(slug='media-walls', nav='Media walls', title='Bespoke media walls in the North West',
+ dict(slug='media-walls', c=('p41-3', 'media-wall-xylocleaf'), nav='Media walls', title='Bespoke media walls in the North West',
       h1='Media walls and fitted living rooms across the North West',
       desc='Bespoke media walls with fires, lit shelving and panelling, plus studies and fitted furniture, designed and built by Joinwell Joinery in the North West.',
       lead='Bespoke furniture for living, designed around you. Crafted with precision, built to last and designed bespoke to your space, style and everyday needs.',
@@ -190,7 +190,7 @@ S = [
       extra=[('p18-1', 'Media wall · Lytham'), ('p24-1', 'Media wall with lit shelving'), ('p25-1', 'Media wall with fire'),
              ('p30-1', 'Media wall with lit niches'), ('p30-3', 'Media wall with lit niches'), ('p02-3', 'Media wall and fireplace')],
       reviews=[]),
- dict(slug='bathrooms', nav='Bathrooms', title='Bespoke bathrooms and vanity units in the North West',
+ dict(slug='bathrooms', c=('p16-4', 'cloakroom-lytham-st-annes'), nav='Bathrooms', title='Bespoke bathrooms and vanity units in the North West',
       h1='Bathrooms, cloakrooms and vanity units in the North West',
       desc='Luxury bespoke bathrooms, cloakrooms and floating vanity units, designed, made and fitted by the Joinwell Joinery team from start to finish.',
       lead='Luxury bespoke bathrooms crafted with precision, premium finishes and tailored design.',
@@ -206,7 +206,7 @@ S = [
       extra=[('p23-1', 'Family bathroom with a wet room'), ('p42-1', 'Cloakroom with a Belfast sink and oak worktop'), ('p31-1', 'Bathroom renovation'),
              ('p35-3', 'Shower room with a lit niche'), ('p45-2', 'Vanity unit in Ares Beton · Poolside'), ('p42-3', 'In-frame shaker vanity')],
       reviews=['mel']),
- dict(slug='staircases', nav='Staircases', title='Bespoke ash and oak staircases in the North West',
+ dict(slug='staircases', c=('p40-1', 'ash-staircase'), nav='Staircases', title='Bespoke ash and oak staircases in the North West',
       h1='Bespoke staircases in ash and oak, made in our workshop',
       desc='Bespoke handmade ash and oak staircases with cut strings and glass, designed and manufactured in the Joinwell Joinery workshop for homes in the North West.',
       lead='Bespoke handmade ash staircases, fully designed and manufactured in our workshop to exactly what our customer wanted.',
@@ -219,9 +219,9 @@ S = [
             ('Finished properly', 'Lacquer and paint by J-DEC, the finisher we work with.'),
             ('Made in our workshop', 'Strings, treads and handrails made on our bench, then fitted by our team.')],
       projects=['poolside', 'ash-staircase'],
-      extra=[('p43-2', 'Ash staircase · Poolside'), ('p43-1', 'Ash staircase · Poolside'), ('p40-2', 'Ash staircase with glass'), ('p40-4', 'Ash staircase with glass')],
+      extra=[('p43-2', 'Ash staircase · Poolside'), ('p43-1', 'Ash staircase · Poolside'), ('p40-2', 'Ash staircase with glass'), ('p40-4', 'Ash staircase with glass'), ('p43-5', 'Ash staircase · Poolside'), ('p40-6', 'Ash staircase with glass')],
       reviews=['corinne']),
- dict(slug='renovations', nav='Renovations', title='Room renovations in the North West',
+ dict(slug='renovations', c=('p33-1', 'bedroom-hidden-doors'), nav='Renovations', title='Room renovations in the North West',
       h1='Room renovations, one team from start to finish',
       desc='Bathroom, bedroom and living room renovations across the North West, with the joinery made in our workshop and all work carried out by the Joinwell Joinery team.',
       lead='All work is carried out by our team from start to finish: the strip-out, the joinery from our workshop, and the fitting.',
@@ -235,6 +235,7 @@ S = [
       extra=[], reviews=['mel']),
 ]
 SJ = {s['slug']: s for s in S}
+BEFORE_CAP = '<span class="cap">Before</span>'
 SING = {'kitchens': 'Kitchen', 'wardrobes': 'Wardrobe', 'media-walls': 'Media wall', 'bathrooms': 'Bathroom', 'staircases': 'Staircase', 'renovations': 'Renovation'}
 ROOMS = [  # home index: rooms -> service pages
  ('kitchens', 'Kitchens', 'Handleless, shaker and Xylocleaf · islands and tall units', 'p15-1', 'Black kitchen with a white island'),
@@ -290,7 +291,7 @@ def head(title, desc, path, extra_head='', ld=None, noindex=False):
 def nav(cur, over=False):
     AC = ' aria-current="page"'
     links = ''.join(f'<a href="/{k}/"{AC if k == cur else ""}>{n}</a>' for k, n in NAV)
-    mlinks = ''.join(f'<a href="/{k}/" data-menu-close>{n}</a>' for k, n in MENU)
+    mlinks = ''.join(f'<a href="/{k}/" data-menu-close style="--i:{i}">{n}</a>' for i, (k, n) in enumerate(MENU))
     return f'''<header class="nav"{" data-over" if over else ""} data-nav>
   <div class="wrap nav__in">
     <a class="brand" href="/" aria-label="Joinwell Joinery, home"><i></i></a>
@@ -303,7 +304,7 @@ def nav(cur, over=False):
 <div class="menu" id="menu" hidden data-menu>
   <div class="menu__top"><a class="brand" href="/" aria-label="Joinwell Joinery, home"><i></i></a><button class="menu__close" type="button" data-menu-close>Close</button></div>
   <nav class="menu__links" aria-label="Menu">{mlinks}</nav>
-  <div class="menu__foot"><a class="tel" href="tel:{PHONE_T}">{PHONE_D}</a><a class="u" href="mailto:{EMAIL}" style="justify-self:start">{EMAIL}</a><a class="btn btn--gold" href="/contact/" style="justify-self:start">Book a free consultation</a></div>
+  <div class="menu__foot"><a class="tel" href="tel:{PHONE_T}" style="--i:8">{PHONE_D}</a><a class="u" href="mailto:{EMAIL}" style="justify-self:start;--i:9">{EMAIL}</a><a class="btn btn--gold" href="/contact/" style="justify-self:start;--i:10">Book a free consultation</a></div>
 </div>
 '''
 
@@ -317,7 +318,7 @@ def close_band(h='Book a free home consultation'):
       <a class="close__tel" href="tel:{PHONE_T}">{PHONE_D}</a>
       <a class="btn btn--gold" href="/contact/">Book a consultation</a>
     </div>
-    <p class="close__area">{area}<span>and throughout the North West</span></p>
+    <p class="close__area hl">{area}<span>and throughout the North West</span></p>
   </div>
 </section>
 '''
@@ -331,12 +332,12 @@ def footer(tab=True):
         <img src="/img/brand/lockup-gold-720.png" width="720" height="309" alt="Joinwell Joinery" loading="lazy">
         <p>Specialists in bespoke luxury fitted furniture in the North West.</p>
       </div>
-      <div class="foot__col"><h3>Rooms</h3>{rooms}</div>
-      <div class="foot__col"><h3>Joinwell</h3><a class="u" href="/work/">Our work</a><a class="u" href="/contact/">Contact</a><a class="u" href="/privacy/">Privacy notice</a></div>
-      <div class="foot__col"><h3>Follow</h3><a class="u" href="{IG}" rel="noopener">Instagram</a><a class="u" href="{FB}" rel="noopener">Facebook</a><a class="u" href="{MYBUILDER}" rel="noopener">MyBuilder</a></div>
-      <div class="foot__col foot__contact"><h3>Contact</h3><a class="u tel" href="tel:{PHONE_T}">{PHONE_D}</a><a class="u" href="mailto:{EMAIL}">{EMAIL}</a></div>
+      <div class="foot__col rv"><h3>Rooms</h3>{rooms}</div>
+      <div class="foot__col rv" style="--d:80ms"><h3>Joinwell</h3><a class="u" href="/work/">Our work</a><a class="u" href="/contact/">Contact</a><a class="u" href="/privacy/">Privacy notice</a></div>
+      <div class="foot__col rv" style="--d:160ms"><h3>Follow</h3><a class="u" href="{IG}" rel="noopener">Instagram</a><a class="u" href="{FB}" rel="noopener">Facebook</a><a class="u" href="{MYBUILDER}" rel="noopener">MyBuilder</a></div>
+      <div class="foot__col foot__contact rv" style="--d:240ms"><h3>Contact</h3><a class="u tel" href="tel:{PHONE_T}">{PHONE_D}</a><a class="u" href="mailto:{EMAIL}">{EMAIL}</a></div>
     </div>
-    <div class="foot__legal"><p>{LEGAL}</p><p>© 2026 Joinwell Joinery Ltd</p></div>
+    <div class="foot__legal hl"><p>{LEGAL}</p><p>© 2026 Joinwell Joinery Ltd</p></div>
   </div>
 </footer>
 {'<a class="tab" href="/contact/">Free home consultation</a>' if tab else ''}
@@ -365,9 +366,9 @@ def svc_line(p):
 
 def card(p, sizes='(max-width: 479px) 92vw, (max-width: 899px) 48vw, 47vw'):
     meta = svc_line(p) + (f' · {p["place"].split(",")[0]}' if p['place'] else '')
-    return f'''<a class="card" href="/work/{p["slug"]}/">
-  <span class="ph fit">{img(p["cover"], sizes, p["title"] + ", " + svc_line(p).lower() + " by Joinwell Joinery")}{img(p["second"], sizes, p["title"] + ", second view", attrs=' aria-hidden="true"')}</span>
-  <span class="card__t"><h3>{e(p["title"])}</h3><p>{e(meta)}</p></span>
+    return f'''<a class="card fw" href="/work/{p["slug"]}/">
+  <span class="ph"><span class="par" data-par="4">{img(p["cover"], sizes, p["title"] + ", " + svc_line(p).lower() + " by Joinwell Joinery")}{img(p["second"], sizes, p["title"] + ", second view", attrs=' aria-hidden="true"')}</span></span>
+  <span class="card__t hl"><h3>{e(p["title"])}</h3><p>{e(meta)}</p></span>
 </a>'''
 
 def write(path, content):
@@ -403,17 +404,17 @@ def home():
 '''
     proof = f'''<section class="proof" aria-label="Why people book us">
   <ul class="wrap">
-    <li><a href="{FB_REVIEWS}" rel="noopener"><b>100%</b> recommended on Facebook</a></li>
-    <li><a href="{MYBUILDER}" rel="noopener">Verified on MyBuilder</a></li>
-    <li>Made in our own workshop</li>
-    <li>Free home consultation and quotation</li>
+    <li class="rv" style="--d:300ms"><a href="{FB_REVIEWS}" rel="noopener"><b>100%</b> recommended on Facebook</a></li>
+    <li class="rv" style="--d:380ms"><a href="{MYBUILDER}" rel="noopener">Verified on MyBuilder</a></li>
+    <li class="rv" style="--d:460ms">Made in our own workshop</li>
+    <li class="rv" style="--d:540ms">Free home consultation and quotation</li>
   </ul>
 </section>
 '''
     intro = f'''<section class="intro sec" aria-labelledby="intro-h">
   <div class="wrap g12">
     <h2 id="intro-h" class="t-statement intro__st rv">Specialists in bespoke luxury fitted furniture in the North West.</h2>
-    <a class="intro__ph ph ph--link fit" href="/work/black-kitchen-and-island/"><span class="par" data-par="4">{img("p03-5", "(max-width: 899px) 80vw, 40vw", "Tall black kitchen unit with lit open shelving and drawers")}</span></a>
+    <a class="intro__ph ph ph--link fw" href="/work/black-kitchen-and-island/"><span class="par" data-par="4">{img("p03-5", "(max-width: 899px) 80vw, 40vw", "Tall black kitchen unit with lit open shelving and drawers")}</span></a>
     <div class="intro__tx rv">
       <p class="t-lead">Our joiners design, make and fit kitchens, wardrobes, media walls, bathrooms and staircases. Each piece is drawn for the room it goes in, manufactured in our workshop and installed by the same team.</p>
       <p class="muted">We work across Kirkham, Lytham, Blackpool, Preston, Manchester and Cheshire, and throughout the North West.</p>
@@ -422,14 +423,14 @@ def home():
   </div>
 </section>
 '''
-    rows = ''.join(f'<a class="ix__row" href="/{k}/" data-k="{k}"><span class="ix__name">{e(n)}</span><span class="ix__meta">{e(c)}</span></a>' for k, n, c, s, a in ROOMS)
+    rows = ''.join(f'<a class="ix__row rv" style="--d:{i * 70}ms" href="/{k}/" data-k="{k}"><span class="ix__name">{e(n)}</span><span class="ix__meta">{e(c)}</span></a>' for i, (k, n, c, s, a) in enumerate(ROOMS))
     plates = ''.join(img(s, '(max-width: 899px) 1px, 40vw', a, cls='is-on' if i == 0 else '', attrs=f' data-k="{k}" data-cap="{e(a)}"') for i, (k, n, c, s, a) in enumerate(ROOMS))
     rail = ''.join(f'<a href="/{k}/"><span class="ph">{img(s, "78vw", a)}</span><h3>{e(n)}</h3><p class="cap">{e(c)}</p></a>' for k, n, c, s, a in ROOMS)
     rooms = f'''<section class="rooms sec bg-2" aria-labelledby="rooms-h" data-signature>
   <div class="wrap">
     <div class="head"><h2 id="rooms-h" class="t-h2 rv">Rooms we design, make and fit</h2><p class="rv" style="--d:120ms">Every photograph here is our own work, in a home in the North West.</p></div>
     <div class="ix" data-ix>
-      <nav class="ix__rows" aria-label="Rooms">{rows}</nav>
+      <nav class="ix__rows hl" aria-label="Rooms">{rows}</nav>
       <div class="ix__plate" aria-hidden="true">{plates}<p class="ix__cap">{e(ROOMS[0][4])}</p></div>
       <div class="ix__rail rail">{rail}</div>
     </div>
@@ -441,7 +442,7 @@ def home():
   <div class="wrap">
     <div class="head"><h2 id="work-h" class="t-h2 rv">Recent work</h2><p class="rv" style="--d:120ms">Four recent jobs, each designed with the client, made in our workshop and fitted by our team.</p></div>
     <div class="works">{''.join(card(PJ[s]) for s in feat)}</div>
-    <div class="more"><p class="muted">{len(P)} projects in the North West, with photographs of every room.</p><a class="go" href="/work/">All projects</a></div>
+    <div class="more hl"><p class="muted">{len(P)} projects in the North West, with photographs of every room.</p><a class="go" href="/work/">All projects</a></div>
   </div>
 </section>
 '''
@@ -451,7 +452,7 @@ def home():
          ('d4', 'p21-6', 'A door hidden in the slat panelling', 'shower-room-hidden-door', '(max-width: 899px) 48vw, 25vw'),
          ('d5', 'p43-4', 'Ash treads stained black, glass cut to the strings', 'poolside', '(max-width: 899px) 48vw, 25vw'),
          ('d6', 'p16-4', 'A lit niche in a veneer panel', 'cloakroom-lytham-st-annes', '(max-width: 899px) 48vw, 33vw')]
-    figs = ''.join(f'''<figure class="{c}"><a class="ph ph--link fit" href="/work/{pj}/" tabindex="-1" aria-hidden="true">{img(s, sz, t)}</a><figcaption><b>{e(t)}</b><a class="u" href="/work/{pj}/">{e(PJ[pj]["title"])}</a></figcaption></figure>''' for c, s, t, pj, sz in D)
+    figs = ''.join(f'''<figure class="{c}"><a class="ph ph--link" href="/work/{pj}/" tabindex="-1" aria-hidden="true"><span class="par" data-par="3">{img(s, sz, t)}</span></a><figcaption><b>{e(t)}</b><a class="u" href="/work/{pj}/">{e(PJ[pj]["title"])}</a></figcaption></figure>''' for c, s, t, pj, sz in D)
     inch = f'''<section class="inch sec on-dark" aria-labelledby="inch-h" data-client-only>
   <div class="wrap">
     <div class="inch__grid"><div class="inch__head"><h2 id="inch-h" class="t-h2 rv">Designed and manufactured to make the most of every inch.</h2><p class="rv" style="--d:120ms">Details from recent jobs, photographed as they were fitted: the drawer, the rail, the door you cannot see.</p></div>{figs}</div>
@@ -462,24 +463,23 @@ def home():
             ('h-poolside-30', 'Assembled in our workshop', 'Built and checked before it leaves for site.'),
             ('h-poolside-57', 'Fitted by our team', 'On site, with the glass templated and fitted.'),
             ('p43-2', 'Finished', 'Stained black and lacquered by J-DEC.')]
-    ff = ''.join(f'<figure><span class="ph">{img(s, "(max-width: 899px) 74vw, 28vw", t + ", ash staircase for the Poolside house")}</span><figcaption><b>{e(t)}</b>{e(c)}</figcaption></figure>' for s, t, c in film)
+    ff = ''.join(f'<figure><span class="ph"><span class="par" data-par="3">{img(s, "(max-width: 899px) 74vw, 28vw", t + ", ash staircase for the Poolside house")}</span></span><figcaption><b>{e(t)}</b>{e(c)}</figcaption></figure>' for s, t, c in film)
     make = f'''<section class="make sec" aria-labelledby="make-h">
-  <div class="wrap make__grid">
-    <div class="make__steps">
-      <div class="rv"><h2 id="make-h" class="t-h2">Designed, made and fitted by one team</h2><p class="muted" style="margin-top:18px">One job from start to finish: the ash staircase for the Poolside house, from our bench to the hallway.</p></div>
-      <ol class="rv" style="--d:120ms">
-        <li><h3>Free home consultation</h3><p>We come to you, look at the room and talk through how you use it. The consultation and the quotation are free.</p></li>
-        <li><h3>Design</h3><p>Each piece is designed for the room it goes in, and you agree the materials and finish with us.</p></li>
-        <li><h3>Made in our workshop</h3><p>Everything is manufactured in our own workshop, from the strings of a staircase to the doors of a wardrobe.</p></li>
-        <li><h3>Fitted by our team</h3><p>The same team installs it in your home and sees it through to the last detail.</p></li>
+  <div class="wrap">
+    <div class="make__top">
+      <div class="make__intro rv"><h2 id="make-h" class="t-h2">Designed, made and fitted by one team</h2><p>One job from start to finish: the ash staircase for the Poolside house, from our bench to the hallway.</p><a class="go" href="/contact/">Book a free home consultation</a></div>
+      <ol class="make__steps hl">
+        <li class="rv" style="--d:80ms"><h3>Free home consultation</h3><p>We come to you, look at the room and talk through how you use it. The consultation and the quotation are free.</p></li>
+        <li class="rv" style="--d:160ms"><h3>Design</h3><p>Each piece is designed for the room it goes in, and you agree the materials and finish with us.</p></li>
+        <li class="rv" style="--d:240ms"><h3>Made in our workshop</h3><p>Everything is manufactured in our own workshop, from the strings of a staircase to the doors of a wardrobe.</p></li>
+        <li class="rv" style="--d:320ms"><h3>Fitted by our team</h3><p>The same team installs it in your home and sees it through to the last detail.</p></li>
       </ol>
-      <a class="go rv" href="/contact/">Book a free home consultation</a>
     </div>
     <div class="make__film">{ff}</div>
   </div>
 </section>
 '''
-    words = reviews_block(['carol', 'mel', 'corinne'])
+    words = reviews_block(['mel', 'carol', 'corinne'])
     body = h + nav('', over=True) + '<main id="content">\n' + hero + proof + intro + rooms + work + inch + make + words + close_band() + '</main>\n' + footer() + tail()
     write('/', body)
 
@@ -489,13 +489,13 @@ def reviews_block(keys, head_h='100% recommended on Facebook'):
         src = r.get('src', 'Facebook review'); url = r.get('url', FB_REVIEWS)
         return f'<p class="who"><b>{e(r["name"])}</b><span>{e(r["on"])}</span><a class="u" href="{url}" rel="noopener">{src}</a></p>'
     first = rv[0]
-    rest = ''.join(f'<figure><blockquote>“{e(r["text"])}”</blockquote>{who(r)}</figure>' for r in rv[1:])
+    rest = ''.join(f'<figure class="rv" style="--d:{120 + i * 100}ms"><blockquote>“{e(r["text"])}”</blockquote>{who(r)}</figure>' for i, r in enumerate(rv[1:]))
     return f'''<section class="words sec bg-2" aria-labelledby="words-h">
   <div class="wrap">
-    <div class="head"><h2 id="words-h" class="t-h2 rv">{head_h}</h2><p class="rv" style="--d:120ms">Every review on our Facebook page recommends us. These are three of them, word for word. <a class="u" href="{FB_REVIEWS}" rel="noopener">Read them all</a></p></div>
-    <div class="words__grid">
+    <div class="head"><h2 id="words-h" class="t-h2 rv">{head_h}</h2><p class="rv" style="--d:120ms">Every review on our Facebook page recommends us. {"These are " + str(len(rv)) + " of them" if len(rv) > 1 else "This is one of them"}, word for word. <a class="u" href="{FB_REVIEWS}" rel="noopener">Read them all</a></p></div>
+    <div class="words__grid hl{" words__grid--solo" if len(rv) == 1 else ""}">
       <figure class="q1 rv"><blockquote>“{e(first["text"])}”</blockquote>{who(first)}</figure>
-      {'<div class="qs rv" style="--d:120ms">' + rest + '</div>' if rest else ''}
+      {'<div class="qs">' + rest + '</div>' if rest else ''}
     </div>
   </div>
 </section>
@@ -508,18 +508,21 @@ def service(s):
     def plate(stem, pj, cls, cap=None, sizes='(max-width: 899px) 92vw, 56vw', lazy=True):
         if pj:
             p = PJ[pj]; cap = cap or p['title']
-            return f'<figure class="{cls}"><a class="ph ph--link fit" href="/work/{pj}/"><span class="par" data-par="3">{img(stem, sizes, p["title"], lazy=lazy)}</span></a><figcaption class="cap"><a class="u" href="/work/{pj}/">{e(cap)}</a></figcaption></figure>'
-        return f'<figure class="{cls}"><span class="ph fit">{img(stem, sizes, cap, lazy=lazy)}</span><figcaption class="cap">{e(cap)}</figcaption></figure>'
-    a = plate(s['a'][0], s['a'][1], 'a', s.get('a_cap'), '(max-width: 899px) 92vw, 56vw', lazy=False)
-    b = plate(s['b'][0], s['b'][1], 'b', None, '(max-width: 899px) 68vw, 34vw')
-    spec = ''.join(f'<div><dt>{e(t)}</dt><dd>{e(d)}</dd></div>' for t, d in s['spec'])
+            return f'<figure class="{cls}"><a class="ph ph--link" href="/work/{pj}/"><span class="par" data-par="3">{img(stem, sizes, p["title"], lazy=lazy)}</span></a><figcaption class="cap"><a class="u" href="/work/{pj}/">{e(cap)}</a></figcaption></figure>'
+        return f'<figure class="{cls}"><span class="ph"><span class="par" data-par="3">{img(stem, sizes, cap, lazy=lazy)}</span></span><figcaption class="cap">{e(cap)}</figcaption></figure>'
+    a = plate(s['a'][0], s['a'][1], 'a', s.get('a_cap'), '(max-width: 899px) 92vw, 46vw', lazy=False)
+    b = plate(s['b'][0], s['b'][1], 'b', None, '(max-width: 899px) 48vw, 28vw')
+    c = plate(s['c'][0], s['c'][1], 'c', None, '(max-width: 899px) 48vw, 22vw')
+    spec = ''.join(f'<div class="rv" style="--d:{i * 70}ms"><dt>{e(t)}</dt><dd>{e(d)}</dd></div>' for i, (t, d) in enumerate(s['spec']))
     projects = [PJ[k] for k in s['projects']]
     cards = ''.join(card(p) for p in projects)
+    if len(projects) % 2:
+        cards += f'''<a class="card card--cta fw" href="/contact/"><span class="ph"><b>Your {SING[s["slug"]].lower()} next</b><span>We come to you, measure the room and talk it through. The consultation and quotation are free.</span><em class="go">Book a consultation</em></span><span class="card__t hl"><h3>Free home consultation</h3><p>{PHONE_D}</p></span></a>'''
     gal = ''
     G = {}
     if s['extra']:
         G[s['slug']] = (s['nav'], [x[0] for x in s['extra']])
-        items = ''.join(f'<a href="{big(st)}" data-open="{s["slug"]}" data-index="{i}"><span class="ph ph--link fit">{img(st, "(max-width: 899px) 48vw, 33vw", c)}</span><span class="cap" style="display:block;margin-top:10px">{e(c)}</span></a>' for i, (st, c) in enumerate(s['extra']))
+        items = ''.join(f'<a href="{big(st)}" data-open="{s["slug"]}" data-index="{i}"><span class="ph ph--link">{img(st, "(max-width: 899px) 48vw, 33vw", c)}</span><span class="cap" style="display:block;margin-top:10px">{e(c)}</span></a>' for i, (st, c) in enumerate(s['extra']))
         gal = f'''<section class="sec" aria-labelledby="more-h" style="--sec-top:0">
   <div class="wrap">
     <div class="head"><h2 id="more-h" class="t-h2 rv">More {s["nav"].lower()} from our Instagram</h2><p class="rv" style="--d:120ms">Open a photograph to see it full size.</p></div>
@@ -532,8 +535,8 @@ def service(s):
         rows = ''
         for p in [PJ[k] for k in ('cloakroom-lytham-st-annes', 'shower-room-hidden-door', 'bedroom-hidden-doors', 'media-wall-xylocleaf')]:
             rows += f'''<div class="ba__row">
-  <figure class="x"><span class="ph fit">{img(p["before"], "(max-width: 899px) 48vw, 32vw", p["title"] + ", before")}</span><figcaption class="cap">Before</figcaption></figure>
-  <figure class="y"><a class="ph ph--link fit" href="/work/{p["slug"]}/">{img(p["cover"], "(max-width: 899px) 48vw, 40vw", p["title"] + ", after")}</a><figcaption class="cap">After</figcaption></figure>
+  <figure class="x"><span class="ph">{img(p["before"], "(max-width: 899px) 48vw, 32vw", p["title"] + ", before")}</span><figcaption class="cap">Before</figcaption></figure>
+  <figure class="y"><a class="ph ph--link" href="/work/{p["slug"]}/">{img(p["cover"], "(max-width: 899px) 48vw, 40vw", p["title"] + ", after")}</a><figcaption class="cap">After</figcaption></figure>
   <div class="t rv"><h3>{e(p["title"])}</h3><p>{e(p["lead"])}</p><a class="go" href="/work/{p["slug"]}/">See the project</a></div>
 </div>'''
         ba = f'''<section class="sec" aria-labelledby="ba-h" style="--sec-top:0">
@@ -555,9 +558,9 @@ def service(s):
     <div class="phead__aside rv" style="--d:120ms"><p class="t-lead">{e(s["lead"])}</p><a class="go" href="/contact/">Book a free home consultation</a></div>
   </div>
 </section>
-<section aria-label="Photographs"><div class="wrap pair">{a}{b}</div></section>
+<section aria-label="Photographs"><div class="wrap pair">{a}{b}{c}</div></section>
 <section class="sec" aria-labelledby="spec-h">
-  <div class="wrap spec"><h2 id="spec-h" class="t-h2 rv">{e(s["spec_h"])}</h2><dl class="rv" style="--d:120ms">{spec}</dl></div>
+  <div class="wrap spec"><h2 id="spec-h" class="t-h2 rv">{e(s["spec_h"])}</h2><dl class="hl">{spec}</dl></div>
 </section>
 {ba}<section class="sec{" bg-2" if not ba else ""}" aria-labelledby="pj-h">
   <div class="wrap">
@@ -577,15 +580,16 @@ def project(p, nxt):
     if len(desc) > 158: desc = desc[:155].rsplit(' ', 1)[0] + '…'
     h = head(title, desc, f'/work/{p["slug"]}/')
     svc = ', '.join(f'<a class="u" href="/{k}/">{SERV[k]}</a>' for k in p['svc'])
-    facts = f'<div><dt>Services</dt><dd>{svc}</dd></div>'
-    facts += f'<div><dt>Location</dt><dd>{e(p["place"] or "North West")}</dd></div>'
-    facts += f'<div><dt>Details</dt><dd>{e(p["details"])}</dd></div>'
+    facts = f'<div class="rv" style="--d:200ms"><dt>Services</dt><dd>{svc}</dd></div>'
+    facts += f'<div class="rv" style="--d:280ms"><dt>Location</dt><dd>{e(p["place"] or "North West")}</dd></div>'
+    facts += f'<div class="rv" style="--d:360ms"><dt>Details</dt><dd>{e(p["details"])}</dd></div>'
     band_list = p['band'] or p['photos'][:3]
-    band = ''.join(f'<a class="ph ph--link" href="{big(st)}" data-open="p" data-index="{p["photos"].index(st) if st in p["photos"] else 0}">{img(st, "(max-width: 899px) 82vw, 35vw", p["title"] + ", photograph " + str(i + 1), lazy=(i > 0))}</a>' for i, st in enumerate(band_list))
+    band = ''.join(f'<a class="ph ph--link" href="{big(st)}" data-open="p" data-index="{p["photos"].index(st) if st in p["photos"] else 0}"><span class="par" data-par="3">{img(st, "(max-width: 899px) 82vw, 35vw", p["title"] + ", photograph " + str(i + 1), lazy=(i > 0))}</span></a>' for i, st in enumerate(band_list))
     rest_ph = [st for st in p['photos'] if st not in band_list and st != p.get('before')]
-    if p.get('before'): rest_ph.append(p['before'])
+    if p.get('before'): rest_ph.insert(0, p['before'])
     gal_list = band_list + rest_ph
-    items = ''.join(f'<a href="{big(st)}" data-open="p" data-index="{len(band_list) + i}"><span class="ph ph--link fit">{img(st, "(max-width: 899px) 92vw, 56vw" if i % 4 in (0, 3) else "(max-width: 899px) 48vw, 40vw", p["title"] + (", before" if st == p.get("before") else ", photograph " + str(len(band_list) + i + 1)))}</span></a>' for i, st in enumerate(rest_ph))
+    rest_ph = rest_ph[:len(rest_ph) // 3 * 3]  # full rows only; every photo stays in the viewer
+    items = ''.join(f'<a href="{big(st)}" data-open="p" data-index="{len(band_list) + i}"><span class="ph ph--link"><span class="par" data-par="3">{img(st, "(max-width: 899px) 48vw, 33vw", p["title"] + (", before" if st == p.get("before") else ", photograph " + str(len(band_list) + i + 1)))}</span></span>{BEFORE_CAP if st == p.get("before") else ""}</a>' for i, st in enumerate(rest_ph))
     G = {'p': (p['title'], gal_list)}
     rest = ''.join(f'<p>{e(x)}</p>' for x in p['rest'])
     body = h + nav('work') + f'''<main id="content">
@@ -594,7 +598,7 @@ def project(p, nxt):
     <p class="crumb"><a class="u" href="/work/">Our work</a><span aria-hidden="true">/</span><span>{e(p["title"])}</span></p>
     <h1 id="h1" class="rv">{e(p["title"])}</h1>
     <div class="phead__aside rv" style="--d:120ms"><p class="t-lead">{e(p["sub"])}</p></div>
-    <dl class="facts rv" style="--d:200ms">{facts}</dl>
+    <dl class="facts hl">{facts}</dl>
   </div>
 </section>
 <section class="band" aria-label="Photographs" style="--n:{len(band_list)}">{band}</section>
@@ -603,7 +607,7 @@ def project(p, nxt):
 </section>
 {f'<section aria-label="More photographs" class="sec" style="--sec-top:0"><div class="wrap"><div class="gal">{items}</div></div></section>' if items else ''}
 <section class="sec" style="--sec-top:0" aria-label="Next project">
-  <div class="wrap"><a class="next" href="/work/{nxt["slug"]}/"><span class="next__t"><span>Next project</span><b>{e(nxt["title"])}</b><span>{e(svc_line(nxt))}</span></span><span class="ph ph--link fit">{img(nxt["cover"], "(max-width: 899px) 62vw, 33vw", nxt["title"])}</span></a></div>
+  <div class="wrap"><a class="next" href="/work/{nxt["slug"]}/"><span class="ph ph--link"><span class="par" data-par="4">{img(nxt["cover"], "(max-width: 899px) 92vw, 92vw", nxt["title"])}</span></span><span class="next__t"><span>Next project</span><b>{e(nxt["title"])}</b><span>{e(svc_line(nxt))}</span></span></a></div>
 </section>
 {close_band()}</main>
 ''' + footer() + lightbox() + tail(G)
@@ -612,7 +616,7 @@ def project(p, nxt):
 # ------------------------------------------------------------------ work index
 def work():
     h = head('Our work | Joinwell Joinery', 'Bespoke kitchens, wardrobes, media walls, bathrooms and staircases designed, made and fitted by Joinwell Joinery in the North West.', '/work/')
-    rows = ''.join(f'<a class="ix__row" href="/work/{p["slug"]}/" data-k="{p["slug"]}"><span class="ix__name">{e(p["title"])}</span><span class="ix__meta">{e(svc_line(p))}{(" · " + e(p["place"].split(",")[0])) if p["place"] else ""}</span></a>' for p in P)
+    rows = ''.join(f'<a class="ix__row rv" style="--d:{min(i, 8) * 60}ms" href="/work/{p["slug"]}/" data-k="{p["slug"]}"><span class="ix__name">{e(p["title"])}</span><span class="ix__meta">{e(svc_line(p))}{(" · " + e(p["place"].split(",")[0])) if p["place"] else ""}</span></a>' for i, p in enumerate(P))
     plates = ''.join(img(p['cover'], '(max-width: 899px) 1px, 40vw', p['title'], cls='is-on' if i == 0 else '', attrs=f' data-k="{p["slug"]}" data-cap="{e(p["details"])}"') for i, p in enumerate(P))
     rail = ''.join(f'<a href="/work/{p["slug"]}/"><span class="ph">{img(p["cover"], "78vw", p["title"])}</span><h3>{e(p["title"])}</h3><p class="cap">{e(svc_line(p))}</p></a>' for p in P)
     cats = ['kitchens', 'wardrobes', 'media-walls', 'bathrooms', 'staircases']
@@ -631,7 +635,7 @@ def work():
 </section>
 <section class="sec" style="--sec-top:0" aria-label="Projects" data-client-only>
   <div class="wrap"><div class="ix" data-ix>
-    <nav class="ix__rows" aria-label="Projects">{rows}</nav>
+    <nav class="ix__rows hl" aria-label="Projects">{rows}</nav>
     <div class="ix__plate" aria-hidden="true">{plates}<p class="ix__cap">{e(P[0]["details"])}</p></div>
     <div class="ix__rail rail">{rail}</div>
   </div></div>
@@ -676,11 +680,11 @@ def contact():
       <div class="send"><button class="btn" type="submit">Send enquiry</button><p>Free, no-obligation quotation. We use your details only to reply to this enquiry; see our <a class="u" href="/privacy/">privacy notice</a>.</p></div>
     </form>
     <aside>
-      <figure><span class="ph fit">{img("p18-1", "(max-width: 899px) 92vw, 33vw", "Media wall with lit shelving and a fire, Lytham", lazy=False)}</span><figcaption class="cap" style="margin-top:10px">Media wall · Lytham</figcaption></figure>
-      <ol class="next-steps">
-        <li><b>We get in touch</b>to arrange a time that suits you.</li>
-        <li><b>We visit your home</b>to measure the room and talk it through.</li>
-        <li><b>You receive a free quotation</b>for the design, making and fitting.</li>
+      <figure><span class="ph">{img("p18-1", "(max-width: 899px) 92vw, 33vw", "Media wall with lit shelving and a fire, Lytham", lazy=False)}</span><figcaption class="cap" style="margin-top:10px">Media wall · Lytham</figcaption></figure>
+      <ol class="next-steps hl">
+        <li class="rv"><b>We get in touch</b>to arrange a time that suits you.</li>
+        <li class="rv" style="--d:90ms"><b>We visit your home</b>to measure the room and talk it through.</li>
+        <li class="rv" style="--d:180ms"><b>You receive a free quotation</b>for the design, making and fitting.</li>
       </ol>
       <p class="muted">We work across {area}, and throughout the North West.</p>
     </aside>
@@ -694,7 +698,7 @@ def simple(path, title, desc, h1, inner, noindex=False, cur=''):
     h = head(title, desc, path, noindex=noindex)
     body = h + nav(cur) + f'''<main id="content">
 <section class="phead" aria-labelledby="h1"><div class="wrap g12"><h1 id="h1" class="rv">{h1}</h1></div></section>
-<section class="sec" style="--sec-top:0"><div class="wrap"><div class="prose">{inner}</div></div></section>
+<section class="sec" style="--sec-top:0"><div class="wrap"><div class="prose{" prose--one" if noindex else ""}">{inner}</div></div></section>
 </main>
 ''' + footer() + tail()
     write(path, body)

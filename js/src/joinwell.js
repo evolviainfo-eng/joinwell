@@ -30,14 +30,37 @@
     });
   }
 
-  /* phone bar: after the first screen, out of the way at the very end */
-  var bar = document.querySelector('.callbar');
-  if (bar) {
-    var tick = function () {
-      var y = scrollY, end = document.documentElement.scrollHeight - innerHeight - y;
-      bar.classList.toggle('is-on', y > innerHeight * 0.55 && end > 420);
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* phone bar and the consultation tab: after the first screen, out of the way at the very end */
+  var bar = document.querySelector('.callbar'), tab = document.querySelector('.tab');
+  var tick = function () {
+    var y = scrollY, end = document.documentElement.scrollHeight - innerHeight - y;
+    if (bar) bar.classList.toggle('is-on', y > innerHeight * 0.55 && end > 420);
+    if (tab) tab.classList.toggle('is-on', y > innerHeight * 0.4 && end > 360);
+  };
+  addEventListener('scroll', tick, { passive: true }); addEventListener('resize', tick); tick();
+
+  /* hairlines draw in once, like the rule under the wordmark */
+  var hls = [].slice.call(document.querySelectorAll('.hl'));
+  if (reduce || !('IntersectionObserver' in window)) hls.forEach(function (el) { el.classList.add('in'); });
+  else {
+    var hio = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting || en.boundingClientRect.top < 0) { en.target.classList.add('in'); hio.unobserve(en.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+    hls.forEach(function (el) { hio.observe(el); });
+    addEventListener('beforeprint', function () { hls.forEach(function (el) { el.classList.add('in'); }); });
+  }
+
+  /* hero photograph drifts slower than the page and eases in a touch (desktop, fine pointer) */
+  var heroPic = document.querySelector('.hero picture');
+  if (heroPic && fine && !reduce && innerWidth >= 900) {
+    var hero = heroPic.closest('.hero'), ticking = false;
+    var drift = function () {
+      ticking = false;
+      var h = hero.offsetHeight, y = Math.min(Math.max(scrollY, 0), h);
+      heroPic.style.transform = 'translate3d(0,' + (y * 0.22).toFixed(1) + 'px,0) scale(' + (1 + (y / h) * 0.05).toFixed(4) + ')';
     };
-    addEventListener('scroll', tick, { passive: true }); addEventListener('resize', tick); tick();
+    addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(drift); } }, { passive: true });
+    drift();
   }
 
   /* enquiry form: honest states, the real endpoint */
