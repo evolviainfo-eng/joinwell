@@ -314,11 +314,11 @@ def close_band(h='Book a free home consultation'):
   <div class="wrap g12">
     <h2 id="close-h" class="t-display rv">{h}</h2>
     <div class="close__aside rv" style="--d:120ms">
-      <p class="muted">We come to you, measure the room and talk it through. The consultation is complimentary and the quotation is free.</p>
+      <p class="muted m-hide">We come to you, measure the room and talk it through. The consultation is complimentary and the quotation is free.</p>
       <a class="close__tel" href="tel:{PHONE_T}">{PHONE_D}</a>
       <a class="btn btn--gold" href="/contact/">Book a consultation</a>
     </div>
-    <p class="close__area hl">{area}<span>and throughout the North West</span></p>
+    <p class="close__area hl m-hide">{area}<span>and throughout the North West</span></p>
   </div>
 </section>
 '''
@@ -330,12 +330,13 @@ def footer(tab=True):
     <div class="foot__grid">
       <div class="foot__brand">
         <img src="/img/brand/lockup-gold-720.png" width="720" height="309" alt="Joinwell Joinery" loading="lazy">
-        <p>Specialists in bespoke luxury fitted furniture in the North West.</p>
+        <p class="m-hide">Specialists in bespoke luxury fitted furniture in the North West.</p>
+        <p class="m-only foot__m"><a class="tel" href="tel:{PHONE_T}">{PHONE_D}</a><a href="mailto:{EMAIL}">{EMAIL}</a><span><a class="u" href="{IG}" rel="noopener">Instagram</a> · <a class="u" href="{FB}" rel="noopener">Facebook</a> · <a class="u" href="/privacy/">Privacy</a></span></p>
       </div>
-      <div class="foot__col rv"><h3>Rooms</h3>{rooms}</div>
-      <div class="foot__col rv" style="--d:80ms"><h3>Joinwell</h3><a class="u" href="/work/">Our work</a><a class="u" href="/contact/">Contact</a><a class="u" href="/privacy/">Privacy notice</a></div>
-      <div class="foot__col rv" style="--d:160ms"><h3>Follow</h3><a class="u" href="{IG}" rel="noopener">Instagram</a><a class="u" href="{FB}" rel="noopener">Facebook</a><a class="u" href="{MYBUILDER}" rel="noopener">MyBuilder</a></div>
-      <div class="foot__col foot__contact rv" style="--d:240ms"><h3>Contact</h3><a class="u tel" href="tel:{PHONE_T}">{PHONE_D}</a><a class="u" href="mailto:{EMAIL}">{EMAIL}</a></div>
+      <div class="foot__col rv m-hide"><h3>Rooms</h3>{rooms}</div>
+      <div class="foot__col rv m-hide" style="--d:80ms"><h3>Joinwell</h3><a class="u" href="/work/">Our work</a><a class="u" href="/contact/">Contact</a><a class="u" href="/privacy/">Privacy notice</a></div>
+      <div class="foot__col rv m-hide" style="--d:160ms"><h3>Follow</h3><a class="u" href="{IG}" rel="noopener">Instagram</a><a class="u" href="{FB}" rel="noopener">Facebook</a><a class="u" href="{MYBUILDER}" rel="noopener">MyBuilder</a></div>
+      <div class="foot__col foot__contact rv m-hide" style="--d:240ms"><h3>Contact</h3><a class="u tel" href="tel:{PHONE_T}">{PHONE_D}</a><a class="u" href="mailto:{EMAIL}">{EMAIL}</a></div>
     </div>
     <div class="foot__legal hl"><p>{LEGAL}</p><p>© 2026 Joinwell Joinery Ltd</p></div>
   </div>
@@ -368,7 +369,7 @@ def card(p, sizes='(max-width: 479px) 92vw, (max-width: 899px) 48vw, 47vw'):
     meta = svc_line(p) + (f' · {p["place"].split(",")[0]}' if p['place'] else '')
     return f'''<a class="card fw" href="/work/{p["slug"]}/">
   <span class="ph"><span class="par" data-par="4">{img(p["cover"], sizes, p["title"] + ", " + svc_line(p).lower() + " by Joinwell Joinery")}{img(p["second"], sizes, p["title"] + ", second view", attrs=' aria-hidden="true"')}</span></span>
-  <span class="card__t hl"><h3>{e(p["title"])}</h3><p>{e(meta)}</p></span>
+  <span class="card__t hl"><h3>{e(p["title"])}</h3><p class="m-hide">{e(meta)}</p></span>
 </a>'''
 
 def write(path, content):
@@ -396,14 +397,15 @@ def home():
   <div class="hero__in"><div class="wrap g12">
     <h1 id="h1" class="rv">Bespoke fitted furniture for homes across the North West</h1>
     <div class="hero__aside rv" style="--d:160ms">
-      <p>Kitchens, wardrobes, media walls, bathrooms and staircases. Designed with you, made in our workshop and fitted by our own team.</p>
+      <p class="m-hide">Kitchens, wardrobes, media walls, bathrooms and staircases. Designed with you, made in our workshop and fitted by our own team.</p>
       <a class="go" href="/contact/">Book a free home consultation</a>
     </div>
   </div></div>
 </section>
 '''
     proof = f'''<section class="proof" aria-label="Why people book us">
-  <ul class="wrap">
+  <p class="wrap proof__line m-only"><a href="{FB_REVIEWS}" rel="noopener"><b>100%</b> recommended on Facebook</a></p>
+  <ul class="wrap m-hide">
     <li class="rv" style="--d:300ms"><a href="{FB_REVIEWS}" rel="noopener"><b>100%</b> recommended on Facebook</a></li>
     <li class="rv" style="--d:380ms"><a href="{MYBUILDER}" rel="noopener">Verified on MyBuilder</a></li>
     <li class="rv" style="--d:460ms">Made in our own workshop</li>
@@ -416,8 +418,8 @@ def home():
     <h2 id="intro-h" class="t-statement intro__st rv">Specialists in bespoke luxury fitted furniture in the North West.</h2>
     <a class="intro__ph ph ph--link fw" href="/work/black-kitchen-and-island/"><span class="par" data-par="4">{img("p03-5", "(max-width: 899px) 80vw, 40vw", "Tall black kitchen unit with lit open shelving and drawers")}</span></a>
     <div class="intro__tx rv">
-      <p class="t-lead">Our joiners design, make and fit kitchens, wardrobes, media walls, bathrooms and staircases. Each piece is drawn for the room it goes in, manufactured in our workshop and installed by the same team.</p>
-      <p class="muted">We work across Kirkham, Lytham, Blackpool, Preston, Manchester and Cheshire, and throughout the North West.</p>
+      <p class="t-lead m-hide">Our joiners design, make and fit kitchens, wardrobes, media walls, bathrooms and staircases. Each piece is drawn for the room it goes in, manufactured in our workshop and installed by the same team.</p>
+      <p class="muted m-hide">We work across Kirkham, Lytham, Blackpool, Preston, Manchester and Cheshire, and throughout the North West.</p>
       <a class="go" href="/work/">See our work</a>
     </div>
   </div>
@@ -425,10 +427,10 @@ def home():
 '''
     rows = ''.join(f'<a class="ix__row rv" style="--d:{i * 70}ms" href="/{k}/" data-k="{k}"><span class="ix__name">{e(n)}</span><span class="ix__meta">{e(c)}</span></a>' for i, (k, n, c, s, a) in enumerate(ROOMS))
     plates = ''.join(img(s, '(max-width: 899px) 1px, 40vw', a, cls='is-on' if i == 0 else '', attrs=f' data-k="{k}" data-cap="{e(a)}"') for i, (k, n, c, s, a) in enumerate(ROOMS))
-    rail = ''.join(f'<a href="/{k}/"><span class="ph">{img(s, "78vw", a)}</span><h3>{e(n)}</h3><p class="cap">{e(c)}</p></a>' for k, n, c, s, a in ROOMS)
+    rail = ''.join(f'<a href="/{k}/"><span class="ph">{img(s, "72vw", a)}</span><h3>{e(n)}</h3><p class="cap m-hide">{e(c)}</p></a>' for k, n, c, s, a in ROOMS)
     rooms = f'''<section class="rooms sec bg-2" aria-labelledby="rooms-h" data-signature>
   <div class="wrap">
-    <div class="head"><h2 id="rooms-h" class="t-h2 rv">Rooms we design, make and fit</h2><p class="rv" style="--d:120ms">Every photograph here is our own work, in a home in the North West.</p></div>
+    <div class="head"><h2 id="rooms-h" class="t-h2 rv">Rooms we design, make and fit</h2><p class="rv m-hide" style="--d:120ms">Every photograph here is our own work, in a home in the North West.</p></div>
     <div class="ix" data-ix>
       <nav class="ix__rows hl" aria-label="Rooms">{rows}</nav>
       <div class="ix__plate" aria-hidden="true">{plates}<p class="ix__cap">{e(ROOMS[0][4])}</p></div>
@@ -440,9 +442,9 @@ def home():
     feat = ['black-kitchen-and-island', 'poolside', 'cloakroom-lytham-st-annes', 'media-wall-and-fireplace']
     work = f'''<section class="work sec" aria-labelledby="work-h">
   <div class="wrap">
-    <div class="head"><h2 id="work-h" class="t-h2 rv">Recent work</h2><p class="rv" style="--d:120ms">Four recent jobs, each designed with the client, made in our workshop and fitted by our team.</p></div>
+    <div class="head"><h2 id="work-h" class="t-h2 rv">Recent work</h2><p class="rv m-hide" style="--d:120ms">Four recent jobs, each designed with the client, made in our workshop and fitted by our team.</p></div>
     <div class="works">{''.join(card(PJ[s]) for s in feat)}</div>
-    <div class="more hl"><p class="muted">{len(P)} projects in the North West, with photographs of every room.</p><a class="go" href="/work/">All projects</a></div>
+    <div class="more hl"><p class="muted m-hide">{len(P)} projects in the North West, with photographs of every room.</p><a class="go" href="/work/">All projects</a></div>
   </div>
 </section>
 '''
@@ -452,10 +454,10 @@ def home():
          ('d4', 'p21-6', 'A door hidden in the slat panelling', 'shower-room-hidden-door', '(max-width: 899px) 48vw, 25vw'),
          ('d5', 'p43-4', 'Ash treads stained black, glass cut to the strings', 'poolside', '(max-width: 899px) 48vw, 25vw'),
          ('d6', 'p16-4', 'A lit niche in a veneer panel', 'cloakroom-lytham-st-annes', '(max-width: 899px) 48vw, 33vw')]
-    figs = ''.join(f'''<figure class="{c}"><a class="ph ph--link" href="/work/{pj}/" tabindex="-1" aria-hidden="true"><span class="par" data-par="3">{img(s, sz, t)}</span></a><figcaption><b>{e(t)}</b><a class="u" href="/work/{pj}/">{e(PJ[pj]["title"])}</a></figcaption></figure>''' for c, s, t, pj, sz in D)
+    figs = ''.join(f'''<figure class="{c}"><a class="ph ph--link" href="/work/{pj}/" tabindex="-1" aria-hidden="true"><span class="par" data-par="3">{img(s, sz, t)}</span></a><figcaption><b>{e(t)}</b><a class="u m-hide" href="/work/{pj}/">{e(PJ[pj]["title"])}</a></figcaption></figure>''' for c, s, t, pj, sz in D)
     inch = f'''<section class="inch sec on-dark" aria-labelledby="inch-h" data-client-only>
   <div class="wrap">
-    <div class="inch__grid"><div class="inch__head"><h2 id="inch-h" class="t-h2 rv">Designed and manufactured to make the most of every inch.</h2><p class="rv" style="--d:120ms">Details from recent jobs, photographed as they were fitted: the drawer, the rail, the door you cannot see.</p></div>{figs}</div>
+    <div class="inch__grid"><div class="inch__head"><h2 id="inch-h" class="t-h2 rv">Designed and manufactured to make the most of every inch.</h2><p class="rv m-hide" style="--d:120ms">Details from recent jobs, photographed as they were fitted: the drawer, the rail, the door you cannot see.</p></div><div class="inch__figs">{figs}</div></div>
   </div>
 </section>
 '''
@@ -463,16 +465,16 @@ def home():
             ('h-poolside-30', 'Assembled in our workshop', 'Built and checked before it leaves for site.'),
             ('h-poolside-57', 'Fitted by our team', 'On site, with the glass templated and fitted.'),
             ('p43-2', 'Finished', 'Stained black and lacquered by J-DEC.')]
-    ff = ''.join(f'<figure><span class="ph"><span class="par" data-par="3">{img(s, "(max-width: 899px) 74vw, 28vw", t + ", ash staircase for the Poolside house")}</span></span><figcaption><b>{e(t)}</b>{e(c)}</figcaption></figure>' for s, t, c in film)
+    ff = ''.join(f'<figure><span class="ph"><span class="par" data-par="3">{img(s, "(max-width: 899px) 74vw, 28vw", t + ", ash staircase for the Poolside house")}</span></span><figcaption><b>{e(t)}</b><span class="m-hide">{e(c)}</span></figcaption></figure>' for s, t, c in film)
     make = f'''<section class="make sec" aria-labelledby="make-h">
   <div class="wrap">
     <div class="make__top">
-      <div class="make__intro rv"><h2 id="make-h" class="t-h2">Designed, made and fitted by one team</h2><p>One job from start to finish: the ash staircase for the Poolside house, from our bench to the hallway.</p><a class="go" href="/contact/">Book a free home consultation</a></div>
+      <div class="make__intro rv"><h2 id="make-h" class="t-h2">Designed, made and fitted by one team</h2><p class="m-hide">One job from start to finish: the ash staircase for the Poolside house, from our bench to the hallway.</p><a class="go" href="/contact/">Book a free home consultation</a></div>
       <ol class="make__steps hl">
-        <li class="rv" style="--d:80ms"><h3>Free home consultation</h3><p>We come to you, look at the room and talk through how you use it. The consultation and the quotation are free.</p></li>
-        <li class="rv" style="--d:160ms"><h3>Design</h3><p>Each piece is designed for the room it goes in, and you agree the materials and finish with us.</p></li>
-        <li class="rv" style="--d:240ms"><h3>Made in our workshop</h3><p>Everything is manufactured in our own workshop, from the strings of a staircase to the doors of a wardrobe.</p></li>
-        <li class="rv" style="--d:320ms"><h3>Fitted by our team</h3><p>The same team installs it in your home and sees it through to the last detail.</p></li>
+        <li class="rv" style="--d:80ms"><h3>Free home consultation</h3><p class="m-hide">We come to you, look at the room and talk through how you use it. The consultation and the quotation are free.</p></li>
+        <li class="rv" style="--d:160ms"><h3>Design</h3><p class="m-hide">Each piece is designed for the room it goes in, and you agree the materials and finish with us.</p></li>
+        <li class="rv" style="--d:240ms"><h3>Made in our workshop</h3><p class="m-hide">Everything is manufactured in our own workshop, from the strings of a staircase to the doors of a wardrobe.</p></li>
+        <li class="rv" style="--d:320ms"><h3>Fitted by our team</h3><p class="m-hide">The same team installs it in your home and sees it through to the last detail.</p></li>
       </ol>
     </div>
     <div class="make__film">{ff}</div>
@@ -492,10 +494,11 @@ def reviews_block(keys, head_h='100% recommended on Facebook'):
     rest = ''.join(f'<figure class="rv" style="--d:{120 + i * 100}ms"><blockquote>“{e(r["text"])}”</blockquote>{who(r)}</figure>' for i, r in enumerate(rv[1:]))
     return f'''<section class="words sec bg-2" aria-labelledby="words-h">
   <div class="wrap">
-    <div class="head"><h2 id="words-h" class="t-h2 rv">{head_h}</h2><p class="rv" style="--d:120ms">Every review on our Facebook page recommends us. {"These are " + str(len(rv)) + " of them" if len(rv) > 1 else "This is one of them"}, word for word. <a class="u" href="{FB_REVIEWS}" rel="noopener">Read them all</a></p></div>
+    <div class="head"><h2 id="words-h" class="t-h2 rv">{head_h}</h2><p class="rv m-hide" style="--d:120ms">Every review on our Facebook page recommends us. {"These are " + str(len(rv)) + " of them" if len(rv) > 1 else "This is one of them"}, word for word. <a class="u" href="{FB_REVIEWS}" rel="noopener">Read them all</a></p></div>
     <div class="words__grid hl{" words__grid--solo" if len(rv) == 1 else ""}">
       <figure class="q1 rv"><blockquote>“{e(first["text"])}”</blockquote>{who(first)}</figure>
-      {'<div class="qs">' + rest + '</div>' if rest else ''}
+      {'<div class="qs m-hide">' + rest + '</div>' if rest else ''}
+      <p class="m-only words__more"><a class="go" href="{FB_REVIEWS}" rel="noopener">All 6 reviews on Facebook</a></p>
     </div>
   </div>
 </section>
@@ -513,19 +516,19 @@ def service(s):
     a = plate(s['a'][0], s['a'][1], 'a', s.get('a_cap'), '(max-width: 899px) 92vw, 46vw', lazy=False)
     b = plate(s['b'][0], s['b'][1], 'b', None, '(max-width: 899px) 48vw, 28vw')
     c = plate(s['c'][0], s['c'][1], 'c', None, '(max-width: 899px) 48vw, 22vw')
-    spec = ''.join(f'<div class="rv" style="--d:{i * 70}ms"><dt>{e(t)}</dt><dd>{e(d)}</dd></div>' for i, (t, d) in enumerate(s['spec']))
+    spec = ''.join(f'<div class="rv" style="--d:{i * 70}ms"><dt>{e(t)}</dt><dd class="m-hide">{e(d)}</dd></div>' for i, (t, d) in enumerate(s['spec']))
     projects = [PJ[k] for k in s['projects']]
     cards = ''.join(card(p) for p in projects)
     if len(projects) % 2:
-        cards += f'''<a class="card card--cta fw" href="/contact/"><span class="ph"><b>Your {SING[s["slug"]].lower()} next</b><span>We come to you, measure the room and talk it through. The consultation and quotation are free.</span><em class="go">Book a consultation</em></span><span class="card__t hl"><h3>Free home consultation</h3><p>{PHONE_D}</p></span></a>'''
+        cards += f'''<a class="card card--cta fw" href="/contact/"><span class="ph"><b>Your {SING[s["slug"]].lower()} next</b><span class="m-hide">We come to you, measure the room and talk it through. The consultation and quotation are free.</span><em class="go">Book a consultation</em></span><span class="card__t hl"><h3>Free home consultation</h3><p>{PHONE_D}</p></span></a>'''
     gal = ''
     G = {}
     if s['extra']:
         G[s['slug']] = (s['nav'], [x[0] for x in s['extra']])
-        items = ''.join(f'<a href="{big(st)}" data-open="{s["slug"]}" data-index="{i}"><span class="ph ph--link">{img(st, "(max-width: 899px) 48vw, 33vw", c)}</span><span class="cap" style="display:block;margin-top:10px">{e(c)}</span></a>' for i, (st, c) in enumerate(s['extra']))
+        items = ''.join(f'<a href="{big(st)}" data-open="{s["slug"]}" data-index="{i}"><span class="ph ph--link">{img(st, "(max-width: 899px) 48vw, 33vw", c)}</span><span class="cap m-hide" style="display:block;margin-top:10px">{e(c)}</span></a>' for i, (st, c) in enumerate(s['extra']))
         gal = f'''<section class="sec" aria-labelledby="more-h" style="--sec-top:0">
   <div class="wrap">
-    <div class="head"><h2 id="more-h" class="t-h2 rv">More {s["nav"].lower()} from our Instagram</h2><p class="rv" style="--d:120ms">Open a photograph to see it full size.</p></div>
+    <div class="head"><h2 id="more-h" class="t-h2 rv">More {s["nav"].lower()} from our Instagram</h2><p class="rv m-hide" style="--d:120ms">Open a photograph to see it full size.</p></div>
     <div class="show">{items}</div>
   </div>
 </section>
@@ -537,11 +540,11 @@ def service(s):
             rows += f'''<div class="ba__row">
   <figure class="x"><span class="ph">{img(p["before"], "(max-width: 899px) 48vw, 32vw", p["title"] + ", before")}</span><figcaption class="cap">Before</figcaption></figure>
   <figure class="y"><a class="ph ph--link" href="/work/{p["slug"]}/">{img(p["cover"], "(max-width: 899px) 48vw, 40vw", p["title"] + ", after")}</a><figcaption class="cap">After</figcaption></figure>
-  <div class="t rv"><h3>{e(p["title"])}</h3><p>{e(p["lead"])}</p><a class="go" href="/work/{p["slug"]}/">See the project</a></div>
+  <div class="t rv"><h3>{e(p["title"])}</h3><p class="m-hide">{e(p["lead"])}</p><a class="go" href="/work/{p["slug"]}/">See the project</a></div>
 </div>'''
         ba = f'''<section class="sec" aria-labelledby="ba-h" style="--sec-top:0">
   <div class="wrap">
-    <div class="head"><h2 id="ba-h" class="t-h2 rv">Before and after</h2><p class="rv" style="--d:120ms">The same rooms, photographed before we started and after we finished.</p></div>
+    <div class="head"><h2 id="ba-h" class="t-h2 rv">Before and after</h2><p class="rv m-hide" style="--d:120ms">The same rooms, photographed before we started and after we finished.</p></div>
     <div class="ba">{rows}</div>
   </div>
 </section>
@@ -553,9 +556,9 @@ def service(s):
     body = h + nav(s['slug']) + f'''<main id="content">
 <section class="phead" aria-labelledby="h1">
   <div class="wrap g12">
-    <p class="crumb"><a class="u" href="/">Joinwell Joinery</a><span aria-hidden="true">/</span><span>{e(s["nav"])}</span></p>
+    <p class="crumb m-hide"><a class="u" href="/">Joinwell Joinery</a><span aria-hidden="true">/</span><span>{e(s["nav"])}</span></p>
     <h1 id="h1" class="rv">{e(s["h1"])}</h1>
-    <div class="phead__aside rv" style="--d:120ms"><p class="t-lead">{e(s["lead"])}</p><a class="go" href="/contact/">Book a free home consultation</a></div>
+    <div class="phead__aside rv" style="--d:120ms"><p class="t-lead m-hide">{e(s["lead"])}</p><a class="go" href="/contact/">Book a free home consultation</a></div>
   </div>
 </section>
 <section aria-label="Photographs"><div class="wrap pair">{a}{b}{c}</div></section>
@@ -564,11 +567,11 @@ def service(s):
 </section>
 {ba}<section class="sec{" bg-2" if not ba else ""}" aria-labelledby="pj-h">
   <div class="wrap">
-    <div class="head"><h2 id="pj-h" class="t-h2 rv">{SING[s["slug"]]} projects</h2><p class="rv" style="--d:120ms">Each one designed, made in our workshop and fitted by our team.</p></div>
+    <div class="head"><h2 id="pj-h" class="t-h2 rv">{SING[s["slug"]]} projects</h2><p class="rv m-hide" style="--d:120ms">Each one designed, made in our workshop and fitted by our team.</p></div>
     <div class="works">{cards}</div>
   </div>
 </section>
-{gal}{rvw}{close_band()}<section class="sec--tight" aria-label="Other rooms"><div class="wrap" style="display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center"><span class="muted">Other rooms:</span>{others}</div></section>
+{gal}{rvw}{close_band()}<section class="sec--tight m-hide" aria-label="Other rooms"><div class="wrap" style="display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center"><span class="muted">Other rooms:</span>{others}</div></section>
 </main>
 ''' + footer() + lightbox() + tail(G)
     write(f'/{s["slug"]}/', body)
@@ -598,12 +601,13 @@ def project(p, nxt):
     <p class="crumb"><a class="u" href="/work/">Our work</a><span aria-hidden="true">/</span><span>{e(p["title"])}</span></p>
     <h1 id="h1" class="rv">{e(p["title"])}</h1>
     <div class="phead__aside rv" style="--d:120ms"><p class="t-lead">{e(p["sub"])}</p></div>
-    <dl class="facts hl">{facts}</dl>
+    <dl class="facts hl m-hide">{facts}</dl>
+    <p class="m-only facts__m">{e(svc_line(p))} · {e((p["place"] or "North West").split(",")[0])}</p>
   </div>
 </section>
 <section class="band" aria-label="Photographs" style="--n:{len(band_list)}">{band}</section>
 <section class="ptext sec" aria-label="About the project">
-  <div class="wrap g12"><p class="lead rv">{e(p["lead"])}</p><div class="rest rv" style="--d:120ms">{rest}<a class="go" href="/contact/">Book a free home consultation</a></div></div>
+  <div class="wrap g12"><p class="lead rv">{e(p["lead"])}</p><div class="rest rv" style="--d:120ms"><div class="m-hide">{rest}</div><a class="go" href="/contact/">Book a free home consultation</a></div></div>
 </section>
 {f'<section aria-label="More photographs" class="sec" style="--sec-top:0"><div class="wrap"><div class="gal">{items}</div></div></section>' if items else ''}
 <section class="sec" style="--sec-top:0" aria-label="Next project">
@@ -618,7 +622,7 @@ def work():
     h = head('Our work | Joinwell Joinery', 'Bespoke kitchens, wardrobes, media walls, bathrooms and staircases designed, made and fitted by Joinwell Joinery in the North West.', '/work/')
     rows = ''.join(f'<a class="ix__row rv" style="--d:{min(i, 8) * 60}ms" href="/work/{p["slug"]}/" data-k="{p["slug"]}"><span class="ix__name">{e(p["title"])}</span><span class="ix__meta">{e(svc_line(p))}{(" · " + e(p["place"].split(",")[0])) if p["place"] else ""}</span></a>' for i, p in enumerate(P))
     plates = ''.join(img(p['cover'], '(max-width: 899px) 1px, 40vw', p['title'], cls='is-on' if i == 0 else '', attrs=f' data-k="{p["slug"]}" data-cap="{e(p["details"])}"') for i, p in enumerate(P))
-    rail = ''.join(f'<a href="/work/{p["slug"]}/"><span class="ph">{img(p["cover"], "78vw", p["title"])}</span><h3>{e(p["title"])}</h3><p class="cap">{e(svc_line(p))}</p></a>' for p in P)
+    rail = ''.join(f'<a href="/work/{p["slug"]}/"><span class="ph">{img(p["cover"], "72vw", p["title"])}</span><h3>{e(p["title"])}</h3><p class="cap m-hide">{e(svc_line(p))}</p></a>' for p in P)
     cats = ['kitchens', 'wardrobes', 'media-walls', 'bathrooms', 'staircases']
     shots = []
     for p in P:
@@ -630,7 +634,7 @@ def work():
 <section class="phead" aria-labelledby="h1">
   <div class="wrap g12">
     <h1 id="h1" class="rv">Bespoke furniture we have designed, made and fitted</h1>
-    <div class="phead__aside rv" style="--d:120ms"><p class="t-lead">{len(P)} projects from homes in the North West, each one designed, made in our workshop and fitted by our team.</p></div>
+    <div class="phead__aside rv m-hide" style="--d:120ms"><p class="t-lead">{len(P)} projects from homes in the North West, each one designed, made in our workshop and fitted by our team.</p></div>
   </div>
 </section>
 <section class="sec" style="--sec-top:0" aria-label="Projects" data-client-only>
@@ -640,7 +644,7 @@ def work():
     <div class="ix__rail rail">{rail}</div>
   </div></div>
 </section>
-<section class="sec bg-2" aria-labelledby="show-h">
+<section class="sec bg-2" aria-labelledby="show-h" data-phone="cut">
   <div class="wrap">
     <div class="head"><h2 id="show-h" class="t-h2 rv">Every room, by type</h2><p class="rv" style="--d:120ms"><span data-count>{len(shots)} photographs</span> from the projects above. Choose a room to filter.</p></div>
     <div class="filters" data-filters role="group" aria-label="Filter by room">{btns}</div>
@@ -660,7 +664,7 @@ def contact():
 <section class="phead" aria-labelledby="h1">
   <div class="wrap g12">
     <h1 id="h1" class="rv">Book a free home consultation</h1>
-    <div class="phead__aside rv" style="--d:120ms"><p class="t-lead">Tell us about the room. We will come to you for a complimentary home consultation and send a free quotation.</p><a class="close__tel" href="tel:{PHONE_T}">{PHONE_D}</a><a class="u" href="mailto:{EMAIL}">{EMAIL}</a></div>
+    <div class="phead__aside rv" style="--d:120ms"><p class="t-lead m-hide">Tell us about the room. We will come to you for a complimentary home consultation and send a free quotation.</p><a class="close__tel" href="tel:{PHONE_T}">{PHONE_D}</a><a class="u" href="mailto:{EMAIL}">{EMAIL}</a></div>
   </div>
 </section>
 <section class="sec" style="--sec-top:0" aria-label="Enquiry form">
@@ -674,19 +678,21 @@ def contact():
       <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required><p class="msg" aria-live="polite"></p></div>
       <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required><p class="msg" aria-live="polite"></p></div>
       <div class="field"><label for="f-loc">Town or postcode</label><input id="f-loc" name="location" autocomplete="postal-code" required><p class="msg" aria-live="polite"></p></div>
+      <details class="more-fields field--full" open data-fold><summary>Add more detail (optional)</summary><div class="more-fields__in">
       <div class="field field--full"><label for="f-svc">What would you like made?</label><select id="f-svc" name="service">{opts}</select><p class="msg" aria-live="polite"></p></div>
       <div class="field field--full"><label for="f-msg">Tell us about the room <span>(optional)</span></label><textarea id="f-msg" name="message" placeholder="e.g. alcove wardrobes either side of the chimney breast, sloping ceiling on one side"></textarea><p class="msg" aria-live="polite"></p></div>
       <div class="field field--full"><label for="f-photos">Photos of the room <span>(optional)</span></label><input id="f-photos" name="attachment" type="file" accept="image/jpeg,image/png,image/heic,image/webp"><p class="hint">One photo, JPG or PNG, up to 5 MB.</p><p class="msg" aria-live="polite"></p></div>
+      </div></details>
       <div class="send"><button class="btn" type="submit">Send enquiry</button><p>Free, no-obligation quotation. We use your details only to reply to this enquiry; see our <a class="u" href="/privacy/">privacy notice</a>.</p></div>
     </form>
     <aside>
       <figure><span class="ph">{img("p18-1", "(max-width: 899px) 92vw, 33vw", "Media wall with lit shelving and a fire, Lytham", lazy=False)}</span><figcaption class="cap" style="margin-top:10px">Media wall · Lytham</figcaption></figure>
       <ol class="next-steps hl">
-        <li class="rv"><b>We get in touch</b>to arrange a time that suits you.</li>
-        <li class="rv" style="--d:90ms"><b>We visit your home</b>to measure the room and talk it through.</li>
-        <li class="rv" style="--d:180ms"><b>You receive a free quotation</b>for the design, making and fitting.</li>
+        <li class="rv"><b>We get in touch</b><span class="m-hide">to arrange a time that suits you.</span></li>
+        <li class="rv" style="--d:90ms"><b>We visit your home</b><span class="m-hide">to measure the room and talk it through.</span></li>
+        <li class="rv" style="--d:180ms"><b>You receive a free quotation</b><span class="m-hide">for the design, making and fitting.</span></li>
       </ol>
-      <p class="muted">We work across {area}, and throughout the North West.</p>
+      <p class="muted m-hide">We work across {area}, and throughout the North West.</p>
     </aside>
   </div>
 </section>

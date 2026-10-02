@@ -44,7 +44,7 @@
 <section class="phead" aria-labelledby="h1">
   <div class="wrap g12">
     <h1 id="h1" class="rv">Book a free home consultation</h1>
-    <div class="phead__aside rv" style="--d:120ms"><p class="t-lead">Tell us about the room. We will come to you for a complimentary home consultation and send a free quotation.</p><a class="close__tel" href="tel:+447948347730">+44 7948 347730</a><a class="u" href="mailto:joinwellj@gmail.com">joinwellj@gmail.com</a></div>
+    <div class="phead__aside rv" style="--d:120ms"><p class="t-lead m-hide">Tell us about the room. We will come to you for a complimentary home consultation and send a free quotation.</p><a class="close__tel" href="tel:+447948347730">+44 7948 347730</a><a class="u" href="mailto:joinwellj@gmail.com">joinwellj@gmail.com</a></div>
   </div>
 </section>
 <section class="sec" style="--sec-top:0" aria-label="Enquiry form">
@@ -58,19 +58,21 @@
       <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required><p class="msg" aria-live="polite"></p></div>
       <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required><p class="msg" aria-live="polite"></p></div>
       <div class="field"><label for="f-loc">Town or postcode</label><input id="f-loc" name="location" autocomplete="postal-code" required><p class="msg" aria-live="polite"></p></div>
+      <details class="more-fields field--full" open data-fold><summary>Add more detail (optional)</summary><div class="more-fields__in">
       <div class="field field--full"><label for="f-svc">What would you like made?</label><select id="f-svc" name="service"><option>Kitchen</option><option>Fitted wardrobes or bedroom</option><option>Media wall or living room</option><option>Bathroom or vanity unit</option><option>Staircase</option><option>Renovation</option><option>Something else</option></select><p class="msg" aria-live="polite"></p></div>
       <div class="field field--full"><label for="f-msg">Tell us about the room <span>(optional)</span></label><textarea id="f-msg" name="message" placeholder="e.g. alcove wardrobes either side of the chimney breast, sloping ceiling on one side"></textarea><p class="msg" aria-live="polite"></p></div>
       <div class="field field--full"><label for="f-photos">Photos of the room <span>(optional)</span></label><input id="f-photos" name="attachment" type="file" accept="image/jpeg,image/png,image/heic,image/webp"><p class="hint">One photo, JPG or PNG, up to 5 MB.</p><p class="msg" aria-live="polite"></p></div>
+      </div></details>
       <div class="send"><button class="btn" type="submit">Send enquiry</button><p>Free, no-obligation quotation. We use your details only to reply to this enquiry; see our <a class="u" href="/privacy/">privacy notice</a>.</p></div>
     </form>
     <aside>
       <figure><span class="ph"><img src="/img/g/p18-1-960.webp" srcset="/img/g/p18-1-640.webp 640w, /img/g/p18-1-960.webp 960w, /img/g/p18-1-1280.webp 1280w, /img/g/p18-1-1600.webp 1600w, /img/g/p18-1-2000.webp 2000w" sizes="(max-width: 899px) 92vw, 33vw" width="2268" height="4032" alt="Media wall with lit shelving and a fire, Lytham" fetchpriority="high"></span><figcaption class="cap" style="margin-top:10px">Media wall · Lytham</figcaption></figure>
       <ol class="next-steps hl">
-        <li class="rv"><b>We get in touch</b>to arrange a time that suits you.</li>
-        <li class="rv" style="--d:90ms"><b>We visit your home</b>to measure the room and talk it through.</li>
-        <li class="rv" style="--d:180ms"><b>You receive a free quotation</b>for the design, making and fitting.</li>
+        <li class="rv"><b>We get in touch</b><span class="m-hide">to arrange a time that suits you.</span></li>
+        <li class="rv" style="--d:90ms"><b>We visit your home</b><span class="m-hide">to measure the room and talk it through.</span></li>
+        <li class="rv" style="--d:180ms"><b>You receive a free quotation</b><span class="m-hide">for the design, making and fitting.</span></li>
       </ol>
-      <p class="muted">We work across Kirkham, Lytham, Blackpool, Preston, Manchester, Cheshire, and throughout the North West.</p>
+      <p class="muted m-hide">We work across Kirkham, Lytham, Blackpool, Preston, Manchester, Cheshire, and throughout the North West.</p>
     </aside>
   </div>
 </section>
@@ -80,12 +82,13 @@
     <div class="foot__grid">
       <div class="foot__brand">
         <img src="/img/brand/lockup-gold-720.png" width="720" height="309" alt="Joinwell Joinery" loading="lazy">
-        <p>Specialists in bespoke luxury fitted furniture in the North West.</p>
+        <p class="m-hide">Specialists in bespoke luxury fitted furniture in the North West.</p>
+        <p class="m-only foot__m"><a class="tel" href="tel:+447948347730">+44 7948 347730</a><a href="mailto:joinwellj@gmail.com">joinwellj@gmail.com</a><span><a class="u" href="https://www.instagram.com/joinwelljoinery/" rel="noopener">Instagram</a> · <a class="u" href="https://www.facebook.com/profile.php?id=100042636765929" rel="noopener">Facebook</a> · <a class="u" href="/privacy/">Privacy</a></span></p>
       </div>
-      <div class="foot__col rv"><h3>Rooms</h3><a class="u" href="/kitchens/">Kitchens</a><a class="u" href="/wardrobes/">Wardrobes</a><a class="u" href="/media-walls/">Media walls</a><a class="u" href="/bathrooms/">Bathrooms</a><a class="u" href="/staircases/">Staircases</a><a class="u" href="/renovations/">Renovations</a></div>
-      <div class="foot__col rv" style="--d:80ms"><h3>Joinwell</h3><a class="u" href="/work/">Our work</a><a class="u" href="/contact/">Contact</a><a class="u" href="/privacy/">Privacy notice</a></div>
-      <div class="foot__col rv" style="--d:160ms"><h3>Follow</h3><a class="u" href="https://www.instagram.com/joinwelljoinery/" rel="noopener">Instagram</a><a class="u" href="https://www.facebook.com/profile.php?id=100042636765929" rel="noopener">Facebook</a><a class="u" href="https://www.mybuilder.com/profile/joinwell_joinery" rel="noopener">MyBuilder</a></div>
-      <div class="foot__col foot__contact rv" style="--d:240ms"><h3>Contact</h3><a class="u tel" href="tel:+447948347730">+44 7948 347730</a><a class="u" href="mailto:joinwellj@gmail.com">joinwellj@gmail.com</a></div>
+      <div class="foot__col rv m-hide"><h3>Rooms</h3><a class="u" href="/kitchens/">Kitchens</a><a class="u" href="/wardrobes/">Wardrobes</a><a class="u" href="/media-walls/">Media walls</a><a class="u" href="/bathrooms/">Bathrooms</a><a class="u" href="/staircases/">Staircases</a><a class="u" href="/renovations/">Renovations</a></div>
+      <div class="foot__col rv m-hide" style="--d:80ms"><h3>Joinwell</h3><a class="u" href="/work/">Our work</a><a class="u" href="/contact/">Contact</a><a class="u" href="/privacy/">Privacy notice</a></div>
+      <div class="foot__col rv m-hide" style="--d:160ms"><h3>Follow</h3><a class="u" href="https://www.instagram.com/joinwelljoinery/" rel="noopener">Instagram</a><a class="u" href="https://www.facebook.com/profile.php?id=100042636765929" rel="noopener">Facebook</a><a class="u" href="https://www.mybuilder.com/profile/joinwell_joinery" rel="noopener">MyBuilder</a></div>
+      <div class="foot__col foot__contact rv m-hide" style="--d:240ms"><h3>Contact</h3><a class="u tel" href="tel:+447948347730">+44 7948 347730</a><a class="u" href="mailto:joinwellj@gmail.com">joinwellj@gmail.com</a></div>
     </div>
     <div class="foot__legal hl"><p>Joinwell Joinery Ltd. Registered in England and Wales, Company No. 15997981. Registered office: Office 17 Boundary Road Business Centre, Boundary Road, Lytham St Annes, FY8 5LT.</p><p>© 2026 Joinwell Joinery Ltd</p></div>
   </div>

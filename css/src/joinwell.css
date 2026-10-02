@@ -423,3 +423,69 @@ h1, h2, h3 { font-weight: inherit; }
   .show > a:last-child:nth-child(odd) { grid-column: 1 / -1; width: 100%; }
   .show > a:last-child:nth-child(odd) .ph { aspect-ratio: 3 / 2; }
 }
+
+/* ===== phone protocol (PHONE.md): a separate edit, one column, one fixed bar ===== */
+.inch__figs { display: contents; }
+.more-fields { border: 0; }
+.more-fields__in { display: grid; gap: 20px; }
+@media (min-width: 760px) { .more-fields > summary { display: none; } }
+@media (max-width: 759px) {
+  /* one fixed bar: the call bar; the header scrolls away with the page */
+  .nav, .nav[data-over] { position: absolute; }
+  .callbar a { text-transform: none; letter-spacing: .01em; font-size: 1.0625rem; font-weight: 500; }
+  .go, .btn, .nav__menu, .menu__close { text-transform: none; letter-spacing: .015em; font-size: 1.0625rem; }
+  .hero h1, .phead h1 { font-size: clamp(2rem, 8.6vw, 2.5rem); line-height: 1.02; }
+  .hero__aside { margin-top: 14px; }
+  /* facts: one line */
+  .proof__line { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; padding-block: 18px; font-size: 1rem; color: var(--c-ink-2); }
+  .proof__line b { font-family: var(--f-display); font-weight: 400; font-size: 1.1875rem; color: var(--c-ink); }
+  .proof__line a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; }
+  .facts__m { grid-column: 1 / -1; color: var(--c-ink-2); }
+  /* rails: the next card shows by more than a fifth */
+  .ix__rail > a { width: 72vw; }
+  .ix__rail h3 { font-size: 1.5rem; }
+  .inch__figs { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; gap: 14px; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); scroll-padding-inline: var(--gutter); }
+  .inch__figs::-webkit-scrollbar { display: none; }
+  .inch__figs > figure, .inch .d6 { flex: 0 0 72vw; width: 72vw; grid-column: auto; margin-top: 0; scroll-snap-align: start; --ar: 4 / 5; }
+  .inch__grid { grid-template-columns: minmax(0, 1fr); row-gap: 28px; }
+  .inch__figs { grid-column: 1 / -1; }
+  .inch figcaption b { font-size: 1.0625rem; }
+  /* process: the steps as one line each */
+  .make__steps li { padding: 14px 0; }
+  .make__steps h3 { font-size: 1.25rem; }
+  .make__top { margin-bottom: 28px; }
+  /* reviews */
+  .words__more { grid-column: 1 / -1; margin-top: 4px; }
+  /* service plates: the two small ones side by side without captions */
+  .pair .b figcaption, .pair .c figcaption { display: none; }
+  /* project band: one large, two side by side */
+  .band { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; overflow: visible; padding-inline: var(--gutter); }
+  .band > * { flex: none; }
+  .band > :first-child { grid-column: 1 / -1; }
+  .band .ph { height: auto; aspect-ratio: 4 / 5; }
+  /* footer: name, phone, email, one line of links */
+  .foot__brand { gap: 18px; }
+  .foot__brand img { width: 150px; }
+  .foot__m { display: grid; gap: 6px; font-size: 1.0625rem; }
+  .foot__m .tel { font-family: var(--f-display); font-size: 1.625rem; font-weight: 300; }
+  .foot__m a { min-height: 40px; display: inline-flex; align-items: center; }
+  .foot__m span { color: var(--c-ink-2); font-size: var(--t-small); }
+  .foot__legal { margin-top: 32px; }
+  /* contact: four fields, the rest folded */
+  .more-fields > summary { cursor: pointer; min-height: 48px; display: flex; align-items: center; font-weight: 500; border-top: var(--hair); border-bottom: var(--hair); list-style: none; }
+  .more-fields > summary::-webkit-details-marker { display: none; }
+  .more-fields > summary::after { content: "+"; margin-left: auto; font-size: 1.25rem; }
+  .more-fields[open] > summary::after { content: "−"; }
+  .more-fields[open] > .more-fields__in { margin-top: 20px; }
+}
+@media (max-width: 759px) {
+  .card--cta .ph { aspect-ratio: auto; padding: 28px 24px; gap: 8px; }
+  .card--cta .card__t { display: none; }
+}
+@media (max-width: 759px) {
+  .pair .a figcaption { display: none; }
+  .prose > details { grid-column: 1 / -1; }
+  .prose > details > p { margin: 14px 0 18px; color: var(--c-ink-2); }
+  .prose { row-gap: 0; }
+}
+@media (max-width: 759px) { .more-fields:not([open]) > :not(summary) { display: none; } }

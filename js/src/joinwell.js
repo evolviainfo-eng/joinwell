@@ -63,6 +63,21 @@
     drift();
   }
 
+  /* phone: legal sections fold into tap-to-open rows */
+  var prose = document.querySelector('.prose:not(.prose--one)');
+  if (prose && matchMedia('(max-width: 759px)').matches) {
+    [].slice.call(prose.querySelectorAll(':scope > h2')).forEach(function (h) {
+      var d = document.createElement('details'), sm = document.createElement('summary'), body = h.nextElementSibling;
+      d.className = 'more-fields'; sm.textContent = h.textContent; d.appendChild(sm);
+      if (body && body.tagName === 'P') d.appendChild(body);
+      h.replaceWith(d);
+    });
+  }
+
+  /* phone: optional form fields start folded */
+  var fold = document.querySelector('[data-fold]');
+  if (fold && matchMedia('(max-width: 759px)').matches) fold.open = false;
+
   /* enquiry form: honest states, the real endpoint */
   var f = document.querySelector('[data-enquiry]');
   if (f) {
